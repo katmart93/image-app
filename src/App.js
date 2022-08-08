@@ -19,13 +19,21 @@ function App() {
     setInputVal("");
   };
 
+  const newImages = (direction) => {
+    if (direction === "next") {
+      setCurrentPage((prev) => prev + 1);
+    } else if (direction === "previous" && currentPage !== 1) {
+      setCurrentPage((prev) => prev - 1);
+    }
+  };
+
   useEffect(() => {
     fetch(
       `https://pixabay.com/api/?key=${API_KEY}&q=${search}&image_type=photo&per_page=9&page=${currentPage}&pretty=true`
     )
       .then((res) => res.json())
       .then((data) => setImages(data.hits));
-  }, [search]);
+  }, [search, currentPage]);
 
   return (
     <div className="App">
@@ -34,6 +42,7 @@ function App() {
         inputVal={inputVal}
         setInputVal={setInputVal}
         handleSearch={handleSearch}
+        newImages={newImages}
       />
     </div>
   );
