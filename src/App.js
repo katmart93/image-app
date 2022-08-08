@@ -11,7 +11,7 @@ function App() {
   const [imager, setImages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [search, setSearch] = useState("");
-  const [inputValue, setInputValue] = useState("");
+  const [inputVal, setInputVal] = useState("");
 
   // useEffect(() => {
   //   fetch(
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <Hero />
+      <Hero inputVal={inputVal} setInputVal={setInputVal} />
     </div>
   );
 }
