@@ -8,7 +8,7 @@ import "./App.css";
 
 function App() {
   const API_KEY = "29139017-65f3e73c8123a7a3bd76688ac";
-  const [imager, setImages] = useState([]);
+  const [images, setImages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [search, setSearch] = useState("");
   const [inputVal, setInputVal] = useState("");
@@ -30,6 +30,7 @@ function App() {
   return (
     <div className="App">
       <Hero
+        images={images}
         inputVal={inputVal}
         setInputVal={setInputVal}
         handleSearch={handleSearch}
