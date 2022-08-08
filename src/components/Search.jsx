@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function Search({ inputVal, setInputVal }) {
+export default function Search({ inputVal, setInputVal, handleSearch }) {
   return (
-    <form>
+    <form onSubmit={handleSearch}>
       <input
         type="text"
         placeholder="Search for an image..."
